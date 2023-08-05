@@ -37,7 +37,7 @@ if __name__ == "__main__":
             print(cube)
             avg = cube.mean(axis=(1, 2))
             hdu = avg.hdu
-            y, x = cube.wcs.celestial.world_to_pixel(reg.center)
+            x, y = cube.wcs.celestial.world_to_pixel(reg.center)
 
             slc = getslice()[int(floor(x)):int(ceil(x)), int(floor(y)):int(ceil(y)), :]
             ww = wcs_utils.slice_wcs(cube.wcs, slc, numpy_order=False)
